@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Col, Grid, Row, Button } from "./components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: "5rem" }}>
+      <Grid>
+        <Row>
+          <Col size={3}>
+            <Button variant="contained">Contained Button</Button>
+          </Col>
+          <Col size={3}>
+            <Button variant="outlined" delete>
+              Outlined Button
+            </Button>
+          </Col>
+          <Col size={3}>
+            <Button>Link Button</Button>
+          </Col>
+          <Col size={3}>
+            <Button>Delete Button (Contained by default)</Button>
+          </Col>
+        </Row>
+      </Grid>
     </div>
   );
 }
