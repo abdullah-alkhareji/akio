@@ -6,18 +6,16 @@ function App() {
       <Grid>
         <Row>
           <Col size={3}>
-            <Button variant="contained">Contained Button</Button>
+            <Button size="sm">Small Button</Button>
           </Col>
           <Col size={3}>
-            <Button variant="outlined" delete>
-              Outlined Button
-            </Button>
+            <Button size="md">Medium Button</Button>
           </Col>
           <Col size={3}>
-            <Button>Link Button</Button>
+            <Button size="lg">Large Button</Button>
           </Col>
           <Col size={3}>
-            <Button>Delete Button (Contained by default)</Button>
+            <Button fullWidth>Delete Button (Contained by default)</Button>
           </Col>
         </Row>
       </Grid>
