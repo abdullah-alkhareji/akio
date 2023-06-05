@@ -2,19 +2,42 @@ import styled, { css } from "styled-components";
 
 type ButtonVariant = "contained" | "outlined" | "link";
 
+type ButtonSize = "sm" | "md" | "lg";
+
 interface ButtonProps {
   variant?: ButtonVariant;
   delete?: boolean;
+  fullWidth?: boolean;
+  size?: ButtonSize;
 }
 
 export const Button = styled.button<ButtonProps>`
-  padding: 10px 20px;
+  padding: ${(props) => {
+    switch (props.size) {
+      case "sm":
+        return "5px 10px";
+      case "lg":
+        return "15px 30px";
+      default: // md is default
+        return "10px 20px";
+    }
+  }};
   border-radius: 4px;
-  font-size: 16px;
+  font-size: ${(props) => {
+    switch (props.size) {
+      case "sm":
+        return "14px";
+      case "lg":
+        return "18px";
+      default: // md is default
+        return "16px";
+    }
+  }};
   cursor: pointer;
+  width: ${(props) => (props.fullWidth ? "100%" : "auto")};
 
   ${(props) =>
-    props.variant === "contained" &&
+    (!props.variant || props.variant === "contained") &&
     css`
       background-color: ${props.delete ? "#f54242" : "#007bff"};
       color: white;
